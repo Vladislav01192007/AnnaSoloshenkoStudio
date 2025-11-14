@@ -8,72 +8,75 @@
 </head>
 <body>
 
+  <!-- Золотий кастомний курсор -->
+  <div class="custom-cursor"></div>
+
   <!-- Логотип -->
-  <header class="logo-header reveal">
-    <img src="logo.jpg" alt="ALT Hair Studio Logo" class="logo">
+  <header class="logo-header reveal parallax" data-speed="3">
+    <img src="logo.jpg" alt="ALT Hair Studio Logo" class="logo animated-logo">
   </header>
 
-  <header class="hero reveal">
+  <header class="hero reveal parallax" data-speed="1.5">
     <video autoplay muted loop playsinline class="background-video">
       <source src="video/haircut.mp4" type="video/mp4">
       Ваш браузер не підтримує відео.
     </video>
-    <div class="overlay reveal">
+    <div class="overlay reveal parallax" data-speed="2">
       <h1 class="reveal">Anna Soloshenko Studio</h1>
       <p class="reveal">Твій стиль починається з волосся 💇‍♀️</p>
       <a href="#services" class="btn reveal">Дізнатись більше</a>
     </div>
   </header>
 
-  <section id="about" class="about reveal">
+  <section id="about" class="about reveal parallax" data-speed="2.5">
     <h2 class="reveal">Про нас</h2>
     <p class="reveal">ALT Hair Studio — це команда професійних майстрів, які створюють стиль, що підкреслює твою індивідуальність. Ми поєднуємо сучасні техніки, догляд преміум-класу і теплу атмосферу.</p>
 
     <div class="gallery">
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal parallax" data-speed="1.5">
         <img src="e1.jpg" alt="Фото 1">
         <p>Елегантна класична стрижка для чоловіків</p>
       </div>
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal parallax" data-speed="1.5">
         <img src="e2.jpg" alt="Фото 2">
         <p>Романтична укладка для особливого вечора</p>
       </div>
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal parallax" data-speed="1.5">
         <img src="e3.jpg" alt="Фото 3">
         <p>Модне омбре для яскравого образу</p>
       </div>
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal parallax" data-speed="1.5">
         <img src="d1.jpg" alt="Фото 4">
         <p>Весела дитяча стрижка з усмішкою</p>
       </div>
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal parallax" data-speed="1.5">
         <img src="q1.jpg" alt="Фото 5">
         <p>Вишукана весільна зачіска</p>
       </div>
     </div>
   </section>
 
-  <section id="services" class="services reveal">
+  <section id="services" class="services reveal parallax" data-speed="2">
     <h2 class="reveal">Наші послуги</h2>
     <div class="service-grid">
-      <div class="service reveal">
+      <div class="service reveal parallax" data-speed="2">
         <h3>Чоловічі стрижки</h3>
         <p>Класичні, сучасні, fade — підберемо стиль, що пасує саме тобі.</p>
       </div>
-      <div class="service reveal">
+      <div class="service reveal parallax" data-speed="2">
         <h3>Жіночі зачіски</h3>
         <p>Від легких укладок до весільних шедеврів.</p>
       </div>
-      <div class="service reveal">
+      <div class="service reveal parallax" data-speed="2">
         <h3>Фарбування</h3>
         <p>Трендові відтінки, догляд і блиск без шкоди для волосся.</p>
       </div>
     </div>
   </section>
 
-  <section class="video-showcase reveal">
+  <section class="video-showcase reveal parallax" data-speed="1.3">
     <h2 class="reveal">Дивись, як ми працюємо</h2>
-    <div class="video-container reveal">
+    <div class="video-container reveal parallax" data-speed="1.3">
       <video controls>
         <source src="video/showcase.mp4" type="video/mp4">
         Ваш браузер не підтримує відео.
@@ -81,7 +84,7 @@
     </div>
   </section>
 
-  <footer class="footer reveal">
+  <footer class="footer reveal parallax" data-speed="1">
     <p>© 2025 Anna Soloshenko Studio | Усі права захищені</p>
     <p>Партнер: <a href="https://altseting.com" target="_blank">ALTSETING.com</a></p>
   </footer>
@@ -103,6 +106,35 @@
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+  </script>
+
+  <!-- 3D PARALLAX EFFECT -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      document.querySelectorAll(".parallax").forEach(el => {
+        const speed = el.getAttribute("data-speed");
+        const x = (window.innerWidth - e.pageX * speed) / 150;
+        const y = (window.innerHeight - e.pageY * speed) / 150;
+        el.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+    });
+  </script>
+
+  <!-- CUSTOM GOLD CURSOR -->
+  <script>
+    const cursor = document.querySelector(".custom-cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.pageX + "px";
+      cursor.style.top = e.pageY + "px";
+    });
+  </script>
+
+  <!-- Logo animation on load -->
+  <script>
+    window.onload = () => {
+      document.querySelector(".animated-logo").classList.add("logo-loaded");
+    };
   </script>
 
 </body>
