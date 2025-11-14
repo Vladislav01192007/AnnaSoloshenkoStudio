@@ -7,73 +7,73 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Логотип -->
-  <header class="logo-header">
+  <header class="logo-header reveal">
     <img src="logo.jpg" alt="ALT Hair Studio Logo" class="logo">
   </header>
 
-  <header class="hero">
+  <header class="hero reveal">
     <video autoplay muted loop playsinline class="background-video">
       <source src="video/haircut.mp4" type="video/mp4">
       Ваш браузер не підтримує відео.
     </video>
-    <div class="overlay">
-      <h1>Anna Soloshenko Studio</h1>
-      <p>Твій стиль починається з волосся 💇‍♀️</p>
-      <a href="#services" class="btn">Дізнатись більше</a>
+    <div class="overlay reveal">
+      <h1 class="reveal">Anna Soloshenko Studio</h1>
+      <p class="reveal">Твій стиль починається з волосся 💇‍♀️</p>
+      <a href="#services" class="btn reveal">Дізнатись більше</a>
     </div>
   </header>
 
-<section id="about" class="about">
-  <h2>Про нас</h2>
-  <p>ALT Hair Studio — це команда професійних майстрів, які створюють стиль, що підкреслює твою індивідуальність. Ми поєднуємо сучасні техніки, догляд преміум-класу і теплу атмосферу.</p>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="e1.jpg" alt="Фото 1">
-      <p>Елегантна класична стрижка для чоловіків</p>
-    </div>
-    <div class="gallery-item">
-      <img src="e2.jpg" alt="Фото 2">
-      <p>Романтична укладка для особливого вечора</p>
-    </div>
-    <div class="gallery-item">
-      <img src="e3.jpg" alt="Фото 3">
-      <p>Модне омбре для яскравого образу</p>
-    </div>
-    <div class="gallery-item">
-      <img src="d1.jpg" alt="Фото 4">
-      <p>Весела дитяча стрижка з усмішкою</p>
-    </div>
-    <div class="gallery-item">
-      <img src="q1.jpg" alt="Фото 5">
-      <p>Вишукана весільна зачіска</p>
-    </div>
-    <!-- додай ще до 15 фото за цим же шаблоном -->
-  </div>
-</section>
+  <section id="about" class="about reveal">
+    <h2 class="reveal">Про нас</h2>
+    <p class="reveal">ALT Hair Studio — це команда професійних майстрів, які створюють стиль, що підкреслює твою індивідуальність. Ми поєднуємо сучасні техніки, догляд преміум-класу і теплу атмосферу.</p>
 
+    <div class="gallery">
+      <div class="gallery-item reveal">
+        <img src="e1.jpg" alt="Фото 1">
+        <p>Елегантна класична стрижка для чоловіків</p>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="e2.jpg" alt="Фото 2">
+        <p>Романтична укладка для особливого вечора</p>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="e3.jpg" alt="Фото 3">
+        <p>Модне омбре для яскравого образу</p>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="d1.jpg" alt="Фото 4">
+        <p>Весела дитяча стрижка з усмішкою</p>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="q1.jpg" alt="Фото 5">
+        <p>Вишукана весільна зачіска</p>
+      </div>
+    </div>
+  </section>
 
-  <section id="services" class="services">
-    <h2>Наші послуги</h2>
+  <section id="services" class="services reveal">
+    <h2 class="reveal">Наші послуги</h2>
     <div class="service-grid">
-      <div class="service">
+      <div class="service reveal">
         <h3>Чоловічі стрижки</h3>
         <p>Класичні, сучасні, fade — підберемо стиль, що пасує саме тобі.</p>
       </div>
-      <div class="service">
+      <div class="service reveal">
         <h3>Жіночі зачіски</h3>
         <p>Від легких укладок до весільних шедеврів.</p>
       </div>
-      <div class="service">
+      <div class="service reveal">
         <h3>Фарбування</h3>
         <p>Трендові відтінки, догляд і блиск без шкоди для волосся.</p>
       </div>
     </div>
   </section>
 
-  <section class="video-showcase">
-    <h2>Дивись, як ми працюємо</h2>
-    <div class="video-container">
+  <section class="video-showcase reveal">
+    <h2 class="reveal">Дивись, як ми працюємо</h2>
+    <div class="video-container reveal">
       <video controls>
         <source src="video/showcase.mp4" type="video/mp4">
         Ваш браузер не підтримує відео.
@@ -81,9 +81,29 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer reveal">
     <p>© 2025 Anna Soloshenko Studio | Усі права захищені</p>
     <p>Партнер: <a href="https://altseting.com" target="_blank">ALTSETING.com</a></p>
   </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      for (let el of revealElements) {
+        const position = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight - 100;
+        if (position < windowHeight) {
+          el.classList.add('active');
+          el.classList.add('visible');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
 </body>
 </html>
