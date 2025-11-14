@@ -353,3 +353,74 @@ section.visible {
   box-shadow: 0 0 40px rgba(212,175,55,0.6);
   transform: scale(1.02);
 }
+
+/* === СЕКЦІЯ ПОСЛУГ === */
+.services {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.services-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.services-title {
+  color: #ffcc33;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.45);
+}
+
+/* Грід послуг */
+.service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Окремий блок послуги */
+.service {
+  background: rgba(0,0,0,0.6);
+  padding: 35px 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,215,0,0.25);
+  box-shadow: 0 0 25px rgba(255,215,0,0.25);
+  transition: 0.5s ease;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(255,215,0,0.55);
+}
+
+/* Заголовки та текст */
+.service h3 {
+  color: #ffcc33;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px rgba(255,215,0,0.3);
+}
+
+.service p {
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Адаптив */
+@media (min-width: 768px) {
+  .service-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .service {
+    width: 30%;
+  }
+}
+
